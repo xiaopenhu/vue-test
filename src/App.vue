@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <p>{{msg1}}</p>
+    <p v-cloak>{{msg1}}</p>
     <p v-text="msg2"></p>
     <p v-html="msg3"></p>
   </div>
@@ -17,5 +17,7 @@ export default {
 }
 </script>
 <style>
-
+  [v-cloak] {
+    display: none;
+  }
 </style>
