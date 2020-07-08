@@ -1,23 +1,62 @@
 <template>
   <div id="app">
-    <p v-cloak>{{msg1}}</p>
-    <p v-text="msg2"></p>
-    <p v-html="msg3"></p>
+    <div class="guding">
+      <div style="width: 34%"></div>
+      <div style="width: 11%" @click="change('/image/index.jpg')"></div>
+      <div style="width: 18%" @click="change('/image/sxy.jpg')"></div>
+      <div style="width: 15%"  @click="change('/image/hezuo.jpg')"></div>
+      <div style="width: 21%" @click="change('/image/lianxi.jpg')"></div>
+    </div>
+    <div class="header">
+      <img src="/image/header.jpg" alt="" width="100%">
+    </div>
+    <div class="index">
+      <img :src="imgName" alt="" width="100%">
+    </div>
+    <div class="footer">
+      <img src="/image/footer.jpg" alt="" width="100%">
+    </div>
   </div>
 </template>
 <script>
 export default {
   data: function () {
     return {
-      msg1: '我是插值表达式',
-      msg2: '<span style="color:red">我是v-text<span>',
-      msg3: '<span style="color:red">我是v-html<span>'
+      imgName: '/image/index.jpg'
+    }
+  },
+  methods: {
+    change: function (name) {
+      this.imgName = name
     }
   }
 }
+document.addEventListener('DOMContentLoaded', () => {
+  const html = document.querySelector('html')
+  const fontSize = window.innerWidth / 10
+  html.style.fontSize = fontSize + 'px'
+})
 </script>
 <style>
-  [v-cloak] {
-    display: none;
+  .guding{
+    height: 1rem;
+    width: 100%;
+    position: absolute;
+    display: flex;
+  }
+  .guding div{
+    height: 100%;
+  }
+  .header{
+    height: auto;
+    wight:100%;
+  }
+  .footer{
+    height: auto;
+    width: 100%;
+  }
+  .index{
+    height: auto;
+    width: 100%;
   }
 </style>
