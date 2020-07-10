@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HelloWorld @aa="fa">
+    <HelloWorld>
       {{msg2}}
     </HelloWorld>
   </div>
