@@ -1,6 +1,9 @@
 <template>
-  <div class="hello" @click="bb">
+  <div class="hello" >
     <p>我是子组件hello world</p>
+    <p>
+      <slot></slot>
+    </p>
   </div>
 </template>
 
@@ -11,15 +14,9 @@ export default {
     return {
       msg: '我是传给爸爸的儿子'
     }
-  },
-  methods: {
-    bb: function () {
-      this.$emit('aa', this.msg)
-    }
   }
 }
 </script>
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .hello{

@@ -1,7 +1,8 @@
-<template>git
+<template>
   <div id="app">
-    <p>{{msg2}}</p>
-    <HelloWorld @aa="fa"></HelloWorld>
+    <HelloWorld @aa="fa">
+      {{msg2}}
+    </HelloWorld>
   </div>
 </template>
 <script>
@@ -14,11 +15,6 @@ export default {
   },
   components: {
     HelloWorld
-  },
-  methods: {
-    fa: function (val) {
-      this.msg2 = val
-    }
   }
 }
 </script>
