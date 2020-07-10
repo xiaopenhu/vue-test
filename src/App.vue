@@ -1,6 +1,7 @@
-<template>
+<template>git
   <div id="app">
-    <HelloWorld :aa="msg"></HelloWorld>
+    <p>{{msg2}}</p>
+    <HelloWorld @aa="fa"></HelloWorld>
   </div>
 </template>
 <script>
@@ -8,11 +9,16 @@ import HelloWorld from './components/HelloWorld'
 export default {
   data: function () {
     return {
-      msg: '父组件传递给了我，所以我是子组件'
+      msg2: '我是父组件的值'
     }
   },
   components: {
     HelloWorld
+  },
+  methods: {
+    fa: function (val) {
+      this.msg2 = val
+    }
   }
 }
 </script>
